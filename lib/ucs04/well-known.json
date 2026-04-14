@@ -11,6 +11,7 @@
   "ethereum": ["11155111", "560048", "1"],
   "intento": ["intento-dev-1"],
   "mantra": ["mantra-dukong-1"],
+  "metadium": ["11", "12"],
   "movement": ["250", "27"],
   "neutron": ["neutron-1", "pion-1"],
   "optimism": ["10", "11155420"],

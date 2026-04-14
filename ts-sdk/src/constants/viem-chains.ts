@@ -1,3 +1,4 @@
+import { defineChain } from "viem"
 import {
   arbitrum,
   arbitrumSepolia,
@@ -18,6 +19,49 @@ import {
   sepolia,
 } from "viem/chains"
 
+export const metadium = defineChain({
+  id: 11,
+  name: "Metadium",
+  nativeCurrency: {
+    name: "META",
+    symbol: "META",
+    decimals: 18,
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://api.metadium.com/prod"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Metadium Explorer",
+      url: "https://explorer.metadium.com",
+    },
+  },
+})
+
+export const metadiumTestnet = defineChain({
+  id: 12,
+  name: "Metadium Testnet Kalmia",
+  nativeCurrency: {
+    name: "META",
+    symbol: "META",
+    decimals: 18,
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://api.metadium.com/dev"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Metadium Testnet Explorer",
+      url: "https://testnetexplorer.metadium.com",
+    },
+  },
+  testnet: true,
+})
+
 export const VIEM_CHAINS = [
   arbitrum,
   arbitrumSepolia,
@@ -32,6 +76,8 @@ export const VIEM_CHAINS = [
   cornTestnet,
   holesky,
   mainnet,
+  metadium,
+  metadiumTestnet,
   scrollSepolia,
   sei,
   seiTestnet,

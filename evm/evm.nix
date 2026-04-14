@@ -454,6 +454,24 @@ _: {
           verification-key = ''"$(op item get tenderly --vault union-testnet-10 --field contract-verification-api-key --reveal)"'';
           verifier-url = mkTenderlyVerifierUrl chain-id;
         }
+        rec {
+          chain-id = "12";
+          ucs04-chain-id = "metadium.12";
+
+          name = "metadium-testnet";
+          rpc-url = "https://api.metadium.com/dev";
+          private-key = ''"$(op item get deployer --vault union-testnet-10 --field evm-private-key --reveal)"'';
+          weth = "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF";
+          rate-limit-enabled = "false";
+
+          native-token-name = "META";
+          native-token-symbol = "META";
+          native-token-decimals = 18;
+
+          verifier = "etherscan";
+          verification-key = ''"$(op item get tenderly --vault union-testnet-10 --field contract-verification-api-key --reveal)"'';
+          verifier-url = mkTenderlyVerifierUrl chain-id;
+        }
         # {
         #   network = "0g-testnet";
         #   rpc-url = "https://evmrpc-testnet.0g.ai";
@@ -463,6 +481,23 @@ _: {
         # }
 
         # mainnets
+        # rec {
+        #   chain-id = "11";
+        #   ucs04-chain-id = "metadium.11";
+        #
+        #   name = "metadium";
+        #   rpc-url = "https://api.metadium.com/prod";
+        #   private-key = ''"$(op item get deployer --vault union-testnet-10 --field evm-private-key --reveal)"'';
+        #   weth = "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF";
+        #
+        #   native-token-name = "META";
+        #   native-token-symbol = "META";
+        #   native-token-decimals = 18;
+        #
+        #   verifier = "etherscan";
+        #   verification-key = ''"$(op item get tenderly --vault union-testnet-10 --field contract-verification-api-key --reveal)"'';
+        #   verifier-url = mkTenderlyVerifierUrl chain-id;
+        # }
         rec {
           chain-id = "1";
           ucs04-chain-id = "ethereum.1";
