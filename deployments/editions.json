@@ -28,6 +28,9 @@
       "ethereum.11155111": {
         "environment": "production"
       },
+      "metadium.12": {
+        "environment": "development"
+      },
       "osmosis.osmo-test-5": {
         "environment": "production"
       },

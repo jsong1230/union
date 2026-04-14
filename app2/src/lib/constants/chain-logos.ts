@@ -120,6 +120,22 @@ export const chainLogoMap = new Map([
     },
   ],
   [
+    "metadium.11",
+    {
+      color: "/logos/chains/color/METADIUM.svg",
+      light: "/logos/chains/light/METADIUM.svg",
+      dark: "/logos/chains/dark/METADIUM.svg",
+    },
+  ],
+  [
+    "metadium.12",
+    {
+      color: "/logos/chains/color/METADIUM.svg",
+      light: "/logos/chains/light/METADIUM.svg",
+      dark: "/logos/chains/dark/METADIUM.svg",
+    },
+  ],
+  [
     "mantra.mantra-dukong-1",
     {
       color: "/logos/chains/color/MANTRA.svg",

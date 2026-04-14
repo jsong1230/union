@@ -1,6 +1,6 @@
 import { uiStore } from "$lib/stores/ui.svelte"
 import type { Edition } from "$lib/themes"
-import { VIEM_CHAINS } from "@unionlabs/sdk/constants/viem-chains"
+import { metadium, metadiumTestnet, VIEM_CHAINS } from "@unionlabs/sdk/constants/viem-chains"
 import { coinbaseWallet, injected, metaMask, safe, walletConnect } from "@wagmi/connectors"
 import {
   createConfig,
@@ -185,6 +185,12 @@ export const ownedFallbacks: Transports = {
       retryDelay: 1_000,
     }),
   ]),
+  [metadium.id]: fallback([
+    http(metadium.rpcUrls.default.http.at(0), { name: "default Metadium RPC" }),
+  ]),
+  [metadiumTestnet.id]: fallback([
+    http(metadiumTestnet.rpcUrls.default.http.at(0), { name: "default Metadium Testnet RPC" }),
+  ]),
 }
 
 export const fallbackTransport = flow(
@@ -344,6 +350,24 @@ const transports: Transports = {
       name: "unstable_connector-injected-base-sepolia",
     }),
     ownedFallbacks[baseSepolia.id],
+  ]),
+  [metadium.id]: fallback([
+    unstable_connector(injected, {
+      retryCount: 3,
+      retryDelay: 100,
+      key: "unstable_connector-injected-metadium",
+      name: "unstable_connector-injected-metadium",
+    }),
+    ownedFallbacks[metadium.id],
+  ]),
+  [metadiumTestnet.id]: fallback([
+    unstable_connector(injected, {
+      retryCount: 3,
+      retryDelay: 100,
+      key: "unstable_connector-injected-metadium-testnet",
+      name: "unstable_connector-injected-metadium-testnet",
+    }),
+    ownedFallbacks[metadiumTestnet.id],
   ]),
 }
 
